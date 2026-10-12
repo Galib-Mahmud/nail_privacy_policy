@@ -1,136 +1,230 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NailGPT Privacy Policy</title>
-<style>
-  :root {
-    --bg: #fffdf8;
-    --ink: #1f1a14;
-    --muted: #5d5346;
-    --gold: #a97d10;
-    --rule: #eadfc6;
-    --flag: #fff2b3;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AppTheme {
+  // Colors for Light Theme
+  static const Color lightBackground = Color(0xFFFAF7F2);
+  static const Color lightButton = Color(0xFF3D2314);
+  static const Color lightText = Color(0xFF3D2314);
+  static const Color lightInputBackground = Color(0xFFFFFFFF);
+  static const Color lightProgressInactive = Color(0xFFE0D5D0);
+
+  // Colors for Dark Theme
+  static const Color darkBackground = Color(0xFF1A0F0A);
+  static const Color darkButton = Color(0xFFD4A574);
+  static const Color darkText = Color(0xFFFFFFFF);
+  static const Color darkInputBackground = Color(0xFF2D1F16);
+  static const Color darkProgressInactive = Color(0xFF4A3F3A);
+
+  // Common colors
+  static const Color logoColor = Color(0xFF6B4423);
+  static const Color darkLogoColor = Color(0xFF9C7B5F);
+
+  static ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: lightBackground,
+    primaryColor: lightButton,
+
+    colorScheme: const ColorScheme.light(
+      primary: lightButton,
+      secondary: logoColor,
+      surface: lightBackground,
+      onPrimary: Colors.white,
+      onSecondary: Colors.white,
+      onSurface: lightText,
+    ),
+
+    textTheme: _buildTextTheme(lightText),
+
+    appBarTheme: AppBarTheme(
+      backgroundColor: lightBackground,
+      elevation: 0,
+      titleTextStyle: GoogleFonts.cinzel(
+        color: lightText,
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: lightInputBackground,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.r),
+        borderSide: BorderSide.none,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.r),
+        borderSide: BorderSide.none,
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.r),
+        borderSide: const BorderSide(color: logoColor, width: 2),
+      ),
+      contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 18.h),
+    ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: lightButton,
+        foregroundColor: Colors.white,
+        elevation: 0,
+        padding: EdgeInsets.symmetric(vertical: 18.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        textStyle: GoogleFonts.poppins(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: lightText,
+        side: const BorderSide(color: lightText, width: 1.5),
+        padding: EdgeInsets.symmetric(vertical: 18.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        textStyle: GoogleFonts.poppins(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  );
+
+  static ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: darkBackground,
+    primaryColor: darkButton,
+
+    colorScheme: const ColorScheme.dark(
+      primary: darkButton,
+      secondary: darkLogoColor,
+      surface: darkBackground,
+      onPrimary: darkBackground,
+      onSecondary: Colors.white,
+      onSurface: darkText,
+    ),
+
+    textTheme: _buildTextTheme(darkText),
+
+    appBarTheme: AppBarTheme(
+      backgroundColor: darkBackground,
+      elevation: 0,
+      titleTextStyle: GoogleFonts.cinzel(
+        color: darkText,
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: darkInputBackground,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.r),
+        borderSide: BorderSide.none,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.r),
+        borderSide: BorderSide.none,
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30.r),
+        borderSide: const BorderSide(color: darkButton, width: 2),
+      ),
+      contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 18.h),
+    ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: darkButton,
+        foregroundColor: darkBackground,
+        elevation: 0,
+        padding: EdgeInsets.symmetric(vertical: 18.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        textStyle: GoogleFonts.poppins(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: darkText,
+        side: const BorderSide(color: darkText, width: 1.5),
+        padding: EdgeInsets.symmetric(vertical: 18.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        textStyle: GoogleFonts.poppins(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  );
+
+  static TextTheme _buildTextTheme(Color textColor) {
+    return GoogleFonts.poppinsTextTheme().copyWith(
+      // Headings use Cinzel
+      headlineLarge: GoogleFonts.cinzel(
+        fontSize: 32.sp,
+        fontWeight: FontWeight.w700,
+        color: textColor,
+        height: 1.2,
+      ),
+      headlineMedium: GoogleFonts.cinzel(
+        fontSize: 28.sp,
+        fontWeight: FontWeight.w700,
+        color: textColor,
+        height: 1.2,
+      ),
+      headlineSmall: GoogleFonts.cinzel(
+        fontSize: 24.sp,
+        fontWeight: FontWeight.w600,
+        color: textColor,
+        height: 1.3,
+      ),
+      titleLarge: GoogleFonts.cinzel(
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w600,
+        color: textColor,
+      ),
+      titleMedium: GoogleFonts.cinzel(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w600,
+        color: textColor,
+      ),
+      // Body text uses Poppins
+      bodyLarge: GoogleFonts.poppins(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
+        color: textColor.withValues(alpha: 0.8),
+      ),
+      bodyMedium: GoogleFonts.poppins(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w400,
+        color: textColor.withValues(alpha: 0.7),
+      ),
+      bodySmall: GoogleFonts.poppins(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w400,
+        color: textColor.withValues(alpha: 0.6),
+      ),
+      labelLarge: GoogleFonts.poppins(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        color: textColor,
+      ),
+    );
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 17px/1.65 Georgia, "Times New Roman", serif;
-  }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 72px; }
-  h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 6px; }
-  h2 {
-    font-size: 1.3rem;
-    margin: 2.4rem 0 .6rem;
-    padding-top: 1.4rem;
-    border-top: 1px solid var(--rule);
-  }
-  h3 { font-size: 1.05rem; margin: 1.4rem 0 .3rem; }
-  p, li { max-width: 68ch; }
-  ul { padding-left: 1.2rem; }
-  li { margin: .3rem 0; }
-  .meta { color: var(--muted); margin: 0 0 1.6rem; }
-  a { color: var(--gold); }
-  a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-  mark { background: var(--flag); padding: 0 .25em; border-radius: 3px; }
-  .summary {
-    border-left: 4px solid var(--gold);
-    padding: .6rem 1rem;
-    background: #fbf4e2;
-    margin: 1.4rem 0;
-  }
-</style>
-</head>
-<body>
-<main>
-
-<h1>NailGPT Privacy Policy</h1>
-<p class="meta">Effective date: September 20, 2026</p>
-
-<p>NailGPT ("NailGPT", "we", "us") is an AI business coaching app for nail technicians, operated by Jenni NailD Tha Block, LLC, based in the United States, which publishes the app on Google Play as "NailGPT Technologies". This policy explains what information we collect when you use the NailGPT app, how we use it, who we share it with, and the choices you have.</p>
-
-<div class="summary">
-  <strong>In short:</strong> we collect the details you give us to create your account and the conversations you have with our coaches. We use them to run the app. We do not sell your personal information. You can ask us to delete your account and data at any time.
-</div>
-
-<h2>1. Information we collect</h2>
-
-<h3>Information you give us</h3>
-<ul>
-  <li><strong>Account details:</strong> your full name, email address, mobile number and password when you sign up.</li>
-  <li><strong>Profile details:</strong> a profile photo, if you choose to add one.</li>
-  <li><strong>Your content:</strong> the messages you send to our coaches, the AI responses you receive, and the chats and answers you save or archive.</li>
-  <li><strong>Support messages:</strong> anything you send us when you contact us.</li>
-</ul>
-
-<h3>Information created when you use the app</h3>
-<ul>
-  <li><strong>Sign-in data:</strong> secure access tokens stored on your device so you stay signed in.</li>
-  <li><strong>Technical data:</strong> device type, operating system, app version and error logs, used to keep the app secure and working.</li>
-  <li><strong>Subscription status:</strong> whether you have a premium plan. Payments are handled by Google Play. We do not receive or store your card number.</li>
-</ul>
-
-<h2>2. How we use your information</h2>
-<ul>
-  <li>Create and manage your account, and verify your email with a one-time code.</li>
-  <li>Provide the coaching features, including generating replies, keeping your chat history and your saved items.</li>
-  <li>Keep the app secure, prevent misuse and fix problems.</li>
-  <li>Respond to your questions and support requests.</li>
-  <li>Improve the app and its features.</li>
-  <li>Meet legal obligations.</li>
-</ul>
-
-<h2>3. AI-generated responses</h2>
-<p>To answer your questions, the messages you send to a coach are processed by a third-party AI service provider (<mark>[AI PROVIDER, e.g. OpenAI / Anthropic / Google]</mark>). Please do not enter sensitive information such as passwords, payment card numbers, government ID numbers or health details.</p>
-<p><mark>[Confirm one: "We do not use your conversations to train AI models." OR describe how conversations are used.]</mark></p>
-<p>AI responses can be incomplete or wrong. NailGPT gives general business guidance and is not a substitute for professional legal, tax, financial or medical advice. Please check important decisions with a qualified professional.</p>
-
-<h2>4. Who we share information with</h2>
-<p>We do not sell your personal information. We share it only with:</p>
-<ul>
-  <li><strong>Service providers</strong> who help us run the app, such as cloud hosting, email delivery for verification codes, and the AI provider named above. They may only use your information to provide their services to us.</li>
-  <li><strong>Google Play</strong>, for subscriptions and purchases.</li>
-  <li><strong>Authorities or other parties</strong> when the law requires it, or to protect the rights, safety and security of our users and of NailGPT.</li>
-  <li><strong>A successor company</strong>, if NailGPT is merged with or acquired by another company. We will tell you if that changes how your information is handled.</li>
-</ul>
-
-<h2>5. How long we keep your information</h2>
-<p>We keep your information while your account is active. If you delete your account, we delete or anonymize your personal information within <mark>[30]</mark> days, except where we must keep some of it longer for legal, security or fraud-prevention reasons. Backups are removed on their normal cycle.</p>
-
-<h2 id="delete-account">6. Delete your account and data</h2>
-<p>You can ask us to delete your account and the data linked to it at any time:</p>
-<ul>
-  <li>In the app: <mark>[Profile &gt; Personal info &gt; Delete account]</mark></li>
-  <li>By email: write to <a href="mailto:galibmahmud.ducse@gmail.com">galibmahmud.ducse@gmail.com</a> from the email address on your account, with the subject "Delete my NailGPT account".</li>
-</ul>
-<p>We will confirm once your account and data have been deleted. Deleting your account also deletes your saved items and chat history.</p>
-
-<h2>7. Your choices and rights</h2>
-<p>Depending on where you live, you may have the right to access the information we hold about you, correct it, delete it, object to or restrict certain uses, and receive a copy of it. You can also withdraw consent you have given us. To use any of these rights, email <a href="mailto:galibmahmud.ducse@gmail.com">galibmahmud.ducse@gmail.com</a>. You can also update your name and profile details in the app.</p>
-
-<h2>8. Security</h2>
-<p>We use reasonable technical and organizational measures to protect your information, including encrypted connections between the app and our servers, and access controls on our systems. Passwords are stored in protected form, not as plain text. No system is completely secure, so we cannot guarantee absolute security. Please choose a strong password and keep it private.</p>
-
-<h2>9. International transfers</h2>
-<p>Our service providers may process information in countries other than your own. Where we transfer information across borders, we take steps to make sure it stays protected as described in this policy.</p>
-
-<h2>10. Children</h2>
-<p>NailGPT is intended for adults who work or plan to work in the nail industry. It is not directed to children under 13 (or under the higher minimum age in your country). We do not knowingly collect information from children. If you believe a child has given us personal information, contact us and we will delete it.</p>
-
-<h2>11. Changes to this policy</h2>
-<p>We may update this policy from time to time. When we make important changes, we will update the effective date above and tell you in the app or by email.</p>
-
-<h2>12. Contact us</h2>
-<p>NailGPT Technologies<br>
-Jenni NailD Tha Block, LLC<br>
-Email: <a href="mailto:galibmahmud.ducse@gmail.com">galibmahmud.ducse@gmail.com</a><br>
-3343 Peachtree Rd NE, Ste 145<br>
-Atlanta, GA 30326-1427<br>
-United States</p>
-
-</main>
-</body>
-</html>
+}
