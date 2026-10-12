@@ -1,230 +1,83 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NailGPT Privacy Policy</title>
+<style>
+  :root { --bg:#fffdf8; --ink:#1f1a14; --muted:#5d5346; --gold:#a97d10; --rule:#eadfc6; --flag:#fff2b3; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 Georgia,"Times New Roman",serif; }
+  main { max-width:720px; margin:0 auto; padding:48px 20px 72px; }
+  h1 { font-size:2.1rem; line-height:1.2; margin:0 0 6px; }
+  h2 { font-size:1.3rem; margin:2.2rem 0 .6rem; padding-top:1.3rem; border-top:1px solid var(--rule); }
+  p, li { max-width:68ch; }
+  ul { padding-left:1.2rem; }
+  li { margin:.3rem 0; }
+  .meta { color:var(--muted); margin:0 0 1.6rem; }
+  a { color:var(--gold); }
+  mark { background:var(--flag); padding:0 .25em; border-radius:3px; }
+  .summary { border-left:4px solid var(--gold); padding:.6rem 1rem; background:#fbf4e2; margin:1.4rem 0; }
+</style>
+</head>
+<body>
+<main>
 
-class AppTheme {
-  // Colors for Light Theme
-  static const Color lightBackground = Color(0xFFFAF7F2);
-  static const Color lightButton = Color(0xFF3D2314);
-  static const Color lightText = Color(0xFF3D2314);
-  static const Color lightInputBackground = Color(0xFFFFFFFF);
-  static const Color lightProgressInactive = Color(0xFFE0D5D0);
+<h1>NailGPT Privacy Policy</h1>
+<p class="meta">Effective date: October 12, 2026</p>
 
-  // Colors for Dark Theme
-  static const Color darkBackground = Color(0xFF1A0F0A);
-  static const Color darkButton = Color(0xFFD4A574);
-  static const Color darkText = Color(0xFFFFFFFF);
-  static const Color darkInputBackground = Color(0xFF2D1F16);
-  static const Color darkProgressInactive = Color(0xFF4A3F3A);
+<p>NailGPT is an AI business coaching app for nail technicians, operated by Jenni NailD Tha Block, LLC (United States), published as "NailGPT Technologies". This policy explains what data we collect, how we collect and use it, and what is shared with a third-party AI service.</p>
 
-  // Common colors
-  static const Color logoColor = Color(0xFF6B4423);
-  static const Color darkLogoColor = Color(0xFF9C7B5F);
+<div class="summary">
+  <strong>In short:</strong> we collect your name, email and password to run your account. When you chat with a coach, <strong>the messages you type are sent to OpenAI</strong> to generate replies, and only after you give permission in the app. Your name, email and password are never sent to OpenAI. We do not sell your data.
+</div>
 
-  static ThemeData lightTheme = ThemeData(
-    brightness: Brightness.light,
-    scaffoldBackgroundColor: lightBackground,
-    primaryColor: lightButton,
+<h2>1. Data we collect and how</h2>
+<ul>
+  <li><strong>Account data</strong>, entered by you when you sign up: full name, email address and password. We do not collect your phone number.</li>
+  <li><strong>Chat data</strong>, entered by you: the messages you send to a coach, the replies you receive, and the chats you save.</li>
+  <li><strong>Automatic data:</strong> a sign-in token stored on your device, and basic technical data (device type, OS, app version, error logs).</li>
+</ul>
 
-    colorScheme: const ColorScheme.light(
-      primary: lightButton,
-      secondary: logoColor,
-      surface: lightBackground,
-      onPrimary: Colors.white,
-      onSecondary: Colors.white,
-      onSurface: lightText,
-    ),
 
-    textTheme: _buildTextTheme(lightText),
+<h2>2. How we use your data</h2>
+<ul>
+  <li>Create and manage your account, and verify your email.</li>
+  <li>Provide the coaching features and keep your chat history.</li>
+  <li>Keep the app secure and fix problems.</li>
+  <li>Respond to your support requests.</li>
+</ul>
+<p>We use your data for nothing else.</p>
 
-    appBarTheme: AppBarTheme(
-      backgroundColor: lightBackground,
-      elevation: 0,
-      titleTextStyle: GoogleFonts.cinzel(
-        color: lightText,
-        fontSize: 20.sp,
-        fontWeight: FontWeight.w600,
-      ),
-    ),
+<h2>3. Sharing data with a third-party AI service</h2>
+<ul>
+  <li><strong>Who receives it:</strong> OpenAI, our third-party AI provider.</li>
+  <li><strong>What is sent:</strong> the messages you type to a coach, plus earlier messages in the same chat needed for a relevant reply. If you type personal details into a message (for example a client's name), they are sent too, so please don't.</li>
+  <li><strong>What is not sent:</strong> your name, email address, password and sign-in token.</li>
+  <li><strong>Why:</strong> only to generate the reply you asked for.</li>
+  <li><strong>Your permission:</strong> the app asks for your permission before your messages are sent to OpenAI for the first time. If you decline, AI coaching is unavailable. You can withdraw permission at any time by emailing us.</li>
+  <li><strong>Protection:</strong> OpenAI processes your messages under its terms for business customers and must protect them to the same standard as this policy. </li>
+</ul>
+<p>AI replies can be wrong. NailGPT gives general business guidance, not legal, tax, financial or medical advice.</p>
 
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: lightInputBackground,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide.none,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide.none,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.r),
-        borderSide: const BorderSide(color: logoColor, width: 2),
-      ),
-      contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 18.h),
-    ),
+<h2>4. Other sharing</h2>
+<p>We do not sell your personal data. Besides OpenAI, we share data only with service providers that host our servers and send verification emails (they may use it only to serve us), and with authorities when the law requires it.</p>
 
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: lightButton,
-        foregroundColor: Colors.white,
-        elevation: 0,
-        padding: EdgeInsets.symmetric(vertical: 18.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    ),
+<h2>5. Retention and deletion</h2>
+<p>We keep your data while your account is active. You can delete your account and all linked data (including chat history) in the app at <mark>[Profile &gt; Delete account]</mark>, or by emailing <a href="mailto:galibmahmud.ducse@gmail.com">galibmahmud.ducse@gmail.com</a> from your account email with the subject "Delete my NailGPT account". We delete it within <mark>[30]</mark> days.</p>
 
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: lightText,
-        side: const BorderSide(color: lightText, width: 1.5),
-        padding: EdgeInsets.symmetric(vertical: 18.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    ),
-  );
+<h2>6. Your rights and security</h2>
+<p>You may access, correct or delete your data and withdraw consent by emailing us. Passwords are stored in protected form, and connections to our servers are encrypted. No system is completely secure.</p>
 
-  static ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
-    scaffoldBackgroundColor: darkBackground,
-    primaryColor: darkButton,
+<h2>7. Children</h2>
+<p>NailGPT is for adults and is not directed to children under 13. If a child has given us data, contact us and we will delete it.</p>
 
-    colorScheme: const ColorScheme.dark(
-      primary: darkButton,
-      secondary: darkLogoColor,
-      surface: darkBackground,
-      onPrimary: darkBackground,
-      onSecondary: Colors.white,
-      onSurface: darkText,
-    ),
+<h2>8. Changes and contact</h2>
+<p>If we change this policy, including what is sent to the AI service, we will update the date above and ask for your permission again where needed.</p>
+<p>NailGPT Technologies, Jenni NailD Tha Block, LLC<br>
+3343 Peachtree Rd NE, Ste 145, Atlanta, GA 30326-1427, United States<br>
+<a href="mailto:galibmahmud.ducse@gmail.com">galibmahmud.ducse@gmail.com</a></p>
 
-    textTheme: _buildTextTheme(darkText),
-
-    appBarTheme: AppBarTheme(
-      backgroundColor: darkBackground,
-      elevation: 0,
-      titleTextStyle: GoogleFonts.cinzel(
-        color: darkText,
-        fontSize: 20.sp,
-        fontWeight: FontWeight.w600,
-      ),
-    ),
-
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: darkInputBackground,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide.none,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.r),
-        borderSide: BorderSide.none,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.r),
-        borderSide: const BorderSide(color: darkButton, width: 2),
-      ),
-      contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 18.h),
-    ),
-
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: darkButton,
-        foregroundColor: darkBackground,
-        elevation: 0,
-        padding: EdgeInsets.symmetric(vertical: 18.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    ),
-
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: darkText,
-        side: const BorderSide(color: darkText, width: 1.5),
-        padding: EdgeInsets.symmetric(vertical: 18.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
-        ),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    ),
-  );
-
-  static TextTheme _buildTextTheme(Color textColor) {
-    return GoogleFonts.poppinsTextTheme().copyWith(
-      // Headings use Cinzel
-      headlineLarge: GoogleFonts.cinzel(
-        fontSize: 32.sp,
-        fontWeight: FontWeight.w700,
-        color: textColor,
-        height: 1.2,
-      ),
-      headlineMedium: GoogleFonts.cinzel(
-        fontSize: 28.sp,
-        fontWeight: FontWeight.w700,
-        color: textColor,
-        height: 1.2,
-      ),
-      headlineSmall: GoogleFonts.cinzel(
-        fontSize: 24.sp,
-        fontWeight: FontWeight.w600,
-        color: textColor,
-        height: 1.3,
-      ),
-      titleLarge: GoogleFonts.cinzel(
-        fontSize: 20.sp,
-        fontWeight: FontWeight.w600,
-        color: textColor,
-      ),
-      titleMedium: GoogleFonts.cinzel(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w600,
-        color: textColor,
-      ),
-      // Body text uses Poppins
-      bodyLarge: GoogleFonts.poppins(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w400,
-        color: textColor.withValues(alpha: 0.8),
-      ),
-      bodyMedium: GoogleFonts.poppins(
-        fontSize: 14.sp,
-        fontWeight: FontWeight.w400,
-        color: textColor.withValues(alpha: 0.7),
-      ),
-      bodySmall: GoogleFonts.poppins(
-        fontSize: 12.sp,
-        fontWeight: FontWeight.w400,
-        color: textColor.withValues(alpha: 0.6),
-      ),
-      labelLarge: GoogleFonts.poppins(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w600,
-        color: textColor,
-      ),
-    );
-  }
-}
+</main>
+</body>
+</html>
